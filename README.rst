@@ -2,8 +2,10 @@
 Pdf Scraper
 ========================
 
-A django project that crawls websites for pdf documents. A typical use case is a site that publishes reports or announcements in pdf
-format on a frequent basis. This application can crawl the site for new pdf's and record when they were found. The crawl
+A django project that crawls websites for pdf documents. 
+A typical use case is a site that publishes reports or announcements in pdf
+format on a frequent basis. This application can crawl the site for new pdf's 
+and record when they were found. The crawl
 engine is based on the excellent Scrapy project which uses the Twisted reactor.
 
 To use this project follow these steps:
@@ -13,19 +15,19 @@ To use this project follow these steps:
     3. Create your "Spiders" corresponding to the sites you want to crawl
     4. Crawl!
 
-
-
-1 Working Environment
+Working Environment
 =====================
 
 You have several options in setting up your working environment.  We recommend
-using virtualenv to separate the dependencies of your project from your system's
-python environment.  If on Linux or Mac OS X, you can also use virtualenvwrapper to help manage multiple virtualenvs across different projects.
+using `virtualenv` to separate the dependencies of your project from your system's
+python environment.  If on Linux or Mac OS X, you can also use 
+`virtualenvwrapper` to help manage multiple virtualenvs across different projects.
 
 Virtualenv with virtualenvwrapper
 ----------------------------------
 
-In Linux and Mac OSX, you can install virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/),
+In Linux and Mac OSX, you can install 
+`virtualenvwrapper <http://virtualenvwrapper.readthedocs.org/en/latest/>`_,
 which will take care of managing your virtual environments and adding the
 project path to the `site-directory` for you::
 
@@ -63,13 +65,13 @@ Here is the advanced part. You must specify two important fields to create your 
 
 As an example, imagine we wanted to crawl `example.com` for pdf's. The following would be our fields
 
-**Allow Rule**: .+example.com/.+
+    **Allow Rule**: .+example.com/.+
 
-**Deny Rule**: .+\\.flv  # We don't want to crawl flv pages
+    **Deny Rule**: .+\\.flv  # We don't want to crawl flv pages
 
-**Start Url**: http://www.example.com/
+    **Start Url**: http://www.example.com/
 
-**Allowed Domain**: http://www.example.com/
+    **Allowed Domain**: http://www.example.com/
 
 
 Crawl!
@@ -85,10 +87,11 @@ Once the scrape is complete, you can fire up your django admin to view the resul
 
     $ ./manage.py runserver --settings=pdfscraper.settings.<settingsfile>
 
-Navigate to `http://localhost:8000/admin/spiders/spider/` in your favourite browser. Check our the SpiderSession objects. 
-These pertain to objects stored to track your scrape activity. Also check out the DataItem objects. These objects contains 
-your pdf links and other very useful metadata.
-
+Navigate to `http://localhost:8000/admin/spiders/spider/` in your favourite 
+browser. Check our the SpiderSession objects. 
+These pertain to objects stored to track your scrape activity. Also check 
+out the DataItem objects. These objects contains your pdf links and other 
+very useful metadata.
 
 Acknowledgements
 ================
