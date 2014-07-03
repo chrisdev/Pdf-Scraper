@@ -8,22 +8,22 @@ engine is based on the excellent Scrapy project which uses the Twisted reactor.
 
 To use this project follow these steps:
 
-#1. Create your working environment
-#2. Install Requirements
-#3. Create your "Spiders" corresponding to the sites you want to crawl
-#4. Crawl!
+    1. Create your working environment
+    2. Install Requirements
+    3. Create your "Spiders" corresponding to the sites you want to crawl
+    4. Crawl!
 
 
 
 1 Working Environment
-===================
+=====================
 
 You have several options in setting up your working environment.  We recommend
 using virtualenv to separate the dependencies of your project from your system's
 python environment.  If on Linux or Mac OS X, you can also use virtualenvwrapper to help manage multiple virtualenvs across different projects.
 
 Virtualenv with virtualenvwrapper
-------------------------------------
+----------------------------------
 
 In Linux and Mac OSX, you can install virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/),
 which will take care of managing your virtual environments and adding the
@@ -35,7 +35,7 @@ project path to the `site-directory` for you::
 
 
 Installing Requirements
-=================
+=======================
 
 To install your requirements for local use, run the following::
 
@@ -57,19 +57,23 @@ Navigate to `http://localhost:8000/admin/spiders/spider/` in your favourite brow
 
 Here is the advanced part. You must specify two important fields to create your Spider.
 
-#1. Allow (or Deny) Rule - specify the regular expression(s) corresponding to your. 
-#2. Spider URLs - Allowed Domain - you must specify the url domain(s) you want to crawl
-#3. Spider URLs - Start Url - you must specify the initial url(s) to visit to begin your crawl
+    1. Allow (or Deny) Rule - specify the regular expression(s) corresponding to your. 
+    2. Spider URLs - Allowed Domain - you must specify the url domain(s) you want to crawl
+    3. Spider URLs - Start Url - you must specify the initial url(s) to visit to begin your crawl
 
-As an example, imagine we wanted to crawl example.com for pdf's. The following would be our fields
-Allow Rule: .+example.com/.+
-Deny Rule: .+\\.flv  # We don't want to crawl flv pages
-Start Url: http://www.example.com/
-Allowed Domain: http://www.example.com/
+As an example, imagine we wanted to crawl `example.com` for pdf's. The following would be our fields
+
+**Allow Rule**: .+example.com/.+
+
+**Deny Rule**: .+\\.flv  # We don't want to crawl flv pages
+
+**Start Url**: http://www.example.com/
+
+**Allowed Domain**: http://www.example.com/
 
 
 Crawl!
-=============================
+=======
 
 Crawling is easy. Just run the following::
 
